@@ -150,9 +150,16 @@ class App extends Component {
             <Route path="/note/:notesId">
               <Note notes={this.state.notes} />
             </Route>
-            <Route path="/folder/:folderId">
-              <Folder folders={this.state.folders} notes={this.state.notes} />
-            </Route>
+            <Route
+              path="/folder/:folderId"
+              render={(props) => (
+                <Folder
+                  {...props}
+                  folders={this.state.folders}
+                  notes={this.state.notes}
+                />
+              )}
+            />
             <Route>
               <NotFound />
             </Route>
