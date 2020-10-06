@@ -1,16 +1,17 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-export default function SideBar({folders}) {
-    console.log(folders);
-  return (
+export default class SideBar extends Component {
+  render() {
+    return (
       <div>
-          <ul>Folders</ul>
-          {folders.map(folder => 
-          <Link key={folder.id} to={{pathname: `/folder/${folder.id}`}}>
-          <li>{folder.name}</li>
-          </Link>)}
+        <ul>Folders</ul>
+        {this.props.folders.map((folder) => (
+          <Link key={folder.id} to={{ pathname: `/folder/${folder.id}` }}>
+            <li>{folder.name}</li>
+          </Link>
+        ))}
       </div>
-  )
+    );
+  }
 }
-
