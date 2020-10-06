@@ -147,9 +147,10 @@ class App extends Component {
             <Route exact path="/">
               <MainView folders={this.state.folders} notes={this.state.notes} />
             </Route>
-            <Route path="/note/:notesId">
-              <Note notes={this.state.notes} />
-            </Route>
+            <Route
+              path="/note/:notesId"
+              render={(props) => <Note {...props} notes={this.state.notes} />}
+            ></Route>
             <Route
               path="/folder/:folderId"
               render={(props) => (
