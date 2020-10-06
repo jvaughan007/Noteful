@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-export default class SideBar extends Component {
+class SideBar extends Component {
   render() {
-    return (
+    const template = this.props.folders ? (
       <div>
         <ul>Folders</ul>
         {this.props.folders.map((folder) => (
@@ -12,6 +12,21 @@ export default class SideBar extends Component {
           </Link>
         ))}
       </div>
+    ) : (
+      <>
+        <h3>{this.props.targetFolder[0].name}</h3>
+        <button
+          type="button"
+          onClick={() => {
+            this.props.history.goBack();
+          }}
+        >
+          Back
+        </button>
+      </>
     );
+    return <>{template}</>;
   }
 }
+
+export default withRouter(SideBar);
