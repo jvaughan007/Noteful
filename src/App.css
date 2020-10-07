@@ -1,0 +1,34 @@
+.header {
+  text-align: center;
+  border: 1rem solid black;
+}
+
+.sidebar {
+  border: 0.5rem solid black;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.folder-list {
+  list-style-type: square;
+  display: inline;
+  padding: 0.25rem;
+}
+
+.main {
+  border: 0.5rem solid black;
+  padding: 1rem;
+  text-align: center;
+}
+
+.notes-title {
+  background: lightgrey;
+  padding: 1rem;
+  border: 0.25rem solid black;
+}
+
+.folder-title {
+  background: lightgrey;
+  padding: 1rem;
+  border: 0.25rem solid black;
+}

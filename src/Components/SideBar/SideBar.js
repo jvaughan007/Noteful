@@ -7,15 +7,10 @@ class SideBar extends Component {
   render() {
     const template = this.props.folders ? (
       <div>
-        <ul>
-          <h3>Folders</h3>
-        </ul>
-        <p>
-          <button>Add Folder</button>
-        </p>
+        <ul className="folder-list-ul"></ul>
         {this.props.folders.map((folder) => (
           <Link key={folder.id} to={{ pathname: `/folder/${folder.id}` }}>
-            <li>{folder.name}</li>
+            <li className="folder-list">{folder.name}</li>
           </Link>
         ))}
       </div>
@@ -32,7 +27,19 @@ class SideBar extends Component {
         </button>
       </>
     );
-    return <>{template}</>;
+    return (
+      <div>
+        <div className="sidebar">
+          <h3 className="folder-title">
+            Folders
+            <p>
+              <button>Add Folder</button>
+            </p>
+          </h3>
+          {template}
+        </div>
+      </div>
+    );
   }
 }
 

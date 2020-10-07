@@ -7,8 +7,8 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
-        <h3>
+      <div className="main">
+        <h3 className="notes-title">
           Notes
           <p>
             <button>add note</button>

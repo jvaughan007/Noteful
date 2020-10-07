@@ -10,7 +10,6 @@ export default class Folder extends Component {
     const { folders, notes } = this.context;
     const { match } = this.props;
     const folderId = match.params.folderId;
-    console.log(folderId);
 
     return (
       <div>

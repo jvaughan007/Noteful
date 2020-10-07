@@ -9,16 +9,12 @@ export default class Note extends Component {
     const { match } = this.props;
     const { notes, folders } = this.context;
     const notesId = match.params.notesId;
-    console.log(notesId, notes);
 
     const note = notes.filter((note) => note.id === notesId);
-    console.log(note);
 
     const folderId = note[0].folderId;
-    console.log(folderId);
 
     const targetFolder = folders.filter((folder) => folder.id === folderId);
-    console.log(targetFolder);
 
     return (
       <div>

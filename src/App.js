@@ -8,6 +8,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import SideBar from "./Components/SideBar/SideBar";
 import Main from "./Components/Main/Main";
 import Context from "./Context/Context";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -24,7 +25,6 @@ class App extends Component {
     fetch(`${this.state.url}/folders`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           folders: data,
         });
@@ -35,7 +35,6 @@ class App extends Component {
     fetch(`${this.state.url}/notes`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.setState({
           notes: data,
         });
@@ -43,7 +42,6 @@ class App extends Component {
   };
 
   deleteNote = (id) => {
-    console.log(this.state.url, id);
     fetch(`${this.state.url}/notes/${id}`, {
       method: "DELETE",
       headers: {
@@ -66,8 +64,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.folders);
-    console.log(this.state.notes);
     return (
       <Context.Provider value={{ ...this.state, deleteNote: this.deleteNote }}>
         <div className="App">
