@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import SideBar from "../SideBar/SideBar";
+import Context from "../../Context/Context";
 
 export default class Note extends Component {
+  static contextType = Context;
+
   render() {
-    const { match, notes, folders } = this.props;
+    const { match } = this.props;
+    const { notes, folders } = this.context;
     const notesId = match.params.notesId;
     console.log(notesId, notes);
 
