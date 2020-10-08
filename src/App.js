@@ -10,6 +10,7 @@ import Main from "./Components/Main/Main";
 import Context from "./Components/Context/Context";
 import "./App.css";
 import AddForm from './Components/AddFolder/AddForm';
+import AddNote from './Components/AddNote/AddNote';
 
 class App extends Component {
   state = {
@@ -80,6 +81,9 @@ class App extends Component {
               <Route path="/note/:notesId" component={Note}></Route>
               <Route path="/folder/:folderId" component={Folder}></Route>
               <Route path="/add-folder" component={AddForm}></Route>
+              <Route path='/add-note'>
+                <AddNote folders={this.state.folders} />
+                </Route>
               <Route>
                 <NotFound />
               </Route>

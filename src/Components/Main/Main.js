@@ -11,7 +11,9 @@ class Main extends Component {
         <h3 className="notes-title">
           Notes
           <p>
+            <Link to={{pathname: `/add-note`}}>
             <button>add note</button>
+            </Link>
           </p>
         </h3>
         {this.props.notes.map((note) => (
