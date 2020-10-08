@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Context from "../../Context/Context";
+import Context from "../Context/Context";
 
 class Main extends Component {
   static contextType = Context;

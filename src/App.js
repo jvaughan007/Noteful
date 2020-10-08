@@ -7,8 +7,9 @@ import Header from "./Components/Header/Header";
 import NotFound from "./Components/NotFound/NotFound";
 import SideBar from "./Components/SideBar/SideBar";
 import Main from "./Components/Main/Main";
-import Context from "./Context/Context";
+import Context from "./Components/Context/Context";
 import "./App.css";
+import AddForm from './Components/AddFolder/AddForm';
 
 class App extends Component {
   state = {
@@ -78,6 +79,7 @@ class App extends Component {
               </Route>
               <Route path="/note/:notesId" component={Note}></Route>
               <Route path="/folder/:folderId" component={Folder}></Route>
+              <Route path="/add-folder" component={AddForm}></Route>
               <Route>
                 <NotFound />
               </Route>

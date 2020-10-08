@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SideBar from "../SideBar/SideBar";
-import Context from "../../Context/Context";
+import Context from "../Context/Context";
 
 export default class Note extends Component {
   static contextType = Context;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Context from "../../Context/Context";
+import Context from "../Context/Context";
 
 class SideBar extends Component {
   static contextType = Context;
@@ -33,7 +33,9 @@ class SideBar extends Component {
           <h3 className="folder-title">
             Folders
             <p>
+              <Link to={{pathname: '/add-folder'}}>
               <button>Add Folder</button>
+              </Link>
             </p>
           </h3>
           {template}

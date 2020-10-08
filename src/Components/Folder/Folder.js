@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SideBar from "../SideBar/SideBar";
 import Main from "../Main/Main";
-import Context from "../../Context/Context";
+import Context from "../Context/Context";
 
 export default class Folder extends Component {
   static contextType = Context;
