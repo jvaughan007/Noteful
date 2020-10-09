@@ -9,8 +9,8 @@ import SideBar from "./Components/SideBar/SideBar";
 import Main from "./Components/Main/Main";
 import Context from "./Components/Context/Context";
 import "./App.css";
-import AddForm from './Components/AddFolder/AddForm';
-import AddNote from './Components/AddNote/AddNote';
+import AddFolder from "./Components/AddFolder/AddFolder";
+import AddNote from "./Components/AddNote/AddNote";
 
 class App extends Component {
   state = {
@@ -30,6 +30,9 @@ class App extends Component {
         this.setState({
           folders: data,
         });
+      })
+      .catch((e) => {
+        throw new Error("unable to get folders!");
       });
   };
 
@@ -40,6 +43,9 @@ class App extends Component {
         this.setState({
           notes: data,
         });
+      })
+      .catch((e) => {
+        throw new Error("unable to get notes!");
       });
   };
 
@@ -57,7 +63,7 @@ class App extends Component {
         });
       })
       .catch((e) => {
-        console.log(e);
+        throw new Error("note deletion failed!");
       });
   };
 
@@ -80,10 +86,10 @@ class App extends Component {
               </Route>
               <Route path="/note/:notesId" component={Note}></Route>
               <Route path="/folder/:folderId" component={Folder}></Route>
-              <Route path="/add-folder" component={AddForm}></Route>
-              <Route path='/add-note'>
+              <Route path="/add-folder" component={AddFolder}></Route>
+              <Route path="/add-note">
                 <AddNote folders={this.state.folders} />
-                </Route>
+              </Route>
               <Route>
                 <NotFound />
               </Route>

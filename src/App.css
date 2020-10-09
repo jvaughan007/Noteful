@@ -32,3 +32,15 @@
   padding: 1rem;
   border: 0.25rem solid black;
 }
+
+.add-note {
+  text-align: center;
+}
+
+.add-folder {
+  text-align: center;
+}
+
+button {
+  margin: 0.25rem;
+}

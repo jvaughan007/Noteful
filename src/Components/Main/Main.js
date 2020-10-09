@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Context from "../Context/Context";
+import PropTypes from "prop-types";
 
 class Main extends Component {
   static contextType = Context;
@@ -11,8 +12,8 @@ class Main extends Component {
         <h3 className="notes-title">
           Notes
           <p>
-            <Link to={{pathname: `/add-note`}}>
-            <button>add note</button>
+            <Link to={{ pathname: `/add-note` }}>
+              <button>add note</button>
             </Link>
           </p>
         </h3>
@@ -36,5 +37,10 @@ class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  history: PropTypes.object.isRequired,
+  notes: PropTypes.array.isRequired,
+};
 
 export default withRouter(Main);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Context from "../Context/Context";
+import PropTypes from "prop-types";
 
 class SideBar extends Component {
   static contextType = Context;
@@ -33,8 +34,8 @@ class SideBar extends Component {
           <h3 className="folder-title">
             Folders
             <p>
-              <Link to={{pathname: '/add-folder'}}>
-              <button>Add Folder</button>
+              <Link to={{ pathname: "/add-folder" }}>
+                <button>Add Folder</button>
               </Link>
             </p>
           </h3>
@@ -44,5 +45,10 @@ class SideBar extends Component {
     );
   }
 }
+
+SideBar.propTypes = {
+  folders: PropTypes.array.isRequired,
+  history: PropTypes.object.isRequired,
+};
 
 export default withRouter(SideBar);
