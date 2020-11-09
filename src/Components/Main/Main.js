@@ -19,7 +19,7 @@ class Main extends Component {
         </h3>
         {this.props.notes.map((note) => (
           <div key={note.id}>
-            <Link key={note.id} to={{ pathname: `/note/${note.id}` }}>
+            <Link key={note.id} to={{ pathname: `/notes/${note.id}` }}>
               <h3>Name: {note.name}</h3>
             </Link>
             <p>Date modified: {note.modified}</p>

@@ -12,6 +12,7 @@ export default class Folder extends Component {
     const { folders, notes } = this.context;
     const { match } = this.props;
     const folderId = match.params.folderId;
+    
 
     return (
       <div>
@@ -20,9 +21,7 @@ export default class Folder extends Component {
         </ErrorBoundary>
         <ErrorBoundary message="Main Faied To Load">
           <Main
-            notes={notes.filter((note) => {
-              return folderId.includes(note.folderId);
-            })}
+            notes={notes.filter((note) => note.folder_id === folderId)}
           />
         </ErrorBoundary>
       </div>

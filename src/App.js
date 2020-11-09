@@ -16,7 +16,7 @@ class App extends Component {
   state = {
     folders: [],
     notes: [],
-    url: "http://localhost:9090",
+    url: "http://localhost:8000",
     updateStore: () => {
       this.getFolders();
       this.getNotes();

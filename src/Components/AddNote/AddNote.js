@@ -17,7 +17,7 @@ class AddNote extends Component {
       name: name,
       content: content,
       modified: new Date(),
-      folderId: folderId,
+      folder_id: folderId,
     };
 
     this.addFolder(data);
